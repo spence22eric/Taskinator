@@ -260,15 +260,17 @@ let loadTasks = function () {
     if (!savedTasks) {
         return false;
     }
-    console.log("loading saved tasks");
+
     // else, load up the saved tasks
     // parse into array of objects
     savedTasks = JSON.parse(savedTasks);
 
-    for (let i = 0; i < savedTasks.length; i++) {
-        // pass each task object into the 'createTaskEl()' function
+    // loop through savedTasks array
+    for (var i = 0; i < savedTasks.length; i++) {
+        // pass each task object into the `createTaskEl()` function
         createTaskEl(savedTasks[i]);
-    }    
+    }
+
 };
 
 formEl.addEventListener("submit", taskFormHandler);
